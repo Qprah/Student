@@ -4,25 +4,35 @@ public class CompSciHnrs {
     private static CourseGraph cg = null;
     private Student stu;
 
+    List<Course> cshCourses;
 
     CompSciHnrs(Student stu){
-        cg = new CourseGraph();
-        this.stu = stu;
+        cg = new CourseGraph(); //initiate the graph relation
 
-        populateCourses(stu);
+        this.stu = stu;
+        cshCourses = populateCourses(stu);
+
+        relateCourses();
+
+
     }
 
     private List<Course> populateCourses(Student stu){
-        CourseParser extractCourses = new CourseParser("compCrsDb.txt", stu);
+        CourseParser extractCourses = new CourseParser("compCrsDb", stu);
         return extractCourses.getCourses();
     }
 
-
-    public static void main(String[] args) {
-        CompSciHnrs hi;
-
-        hi = new CompSciHnrs(new Student("Anmo", "asdnasd", "jiasndj"));
-
+    public List<Course> getCshCourses() {
+        return cshCourses;
     }
+
+    private void relateCourses(){
+
+        for(Course c: cshCourses){
+            cg.addVertex(c.getCode());
+            System.out.println(c.toString());
+        }
+    }
+
 
 }

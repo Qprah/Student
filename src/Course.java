@@ -62,7 +62,7 @@ public class Course {
         return "Course{" +
                 "code='" + code + '\'' +
                 ", name='" + name + '\'' +
-                ", student=" + student +
+                ", student=" + " " +
                 ", letterGrade='" + letterGrade + '\'' +
                 ", courseLevel=" + courseLevel +
                 ", description='" + description + '\'' +

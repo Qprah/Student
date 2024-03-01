@@ -16,6 +16,14 @@ public class Main {
         studentsList.add(new Student("Sophia", "sophia@example.com", "pass7"));
         studentsList.add(new Student("Liam", "liam@example.com", "pass8"));
 
+        //enroll first student in Comp sci honors for now
+        CompSciHnrs csh = new CompSciHnrs(studentsList.get(0));
+
+
+
+
+
+
         // Print the details of each student using a loop
         for (int i = 0; i < studentsList.size(); i++) {
             System.out.println("Student " + (i + 1) + ":");
